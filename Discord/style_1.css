@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    /* sets variables */
+    --bg-color: #36393e;
+}
+
+* {
+    /* to force everything to look nicely */
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* not necessary but still. One rem now is 16px*/
+    font-size: 16px;
+}
+
+body {
+    /* set the font-femaly for all the text */
+    font-family: "Open Sans", sans-serif;
+}
+
+input, label, a {
+    /* display: inline-block; BY DEFAULT*/
+    display: block;  /* we don't want these elements to stack on one line, we want them to go one by one */
+}
+
+/* Main */
+
+/* Header */
+header {
+    /* OLD FASHIONED WAY!!! */
+    /* Just seting the height and width, then verifying that the logo is on its place */
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--bg-color);
+}
+
+header .logo {
+    width: 180px;
+    height: 48px;
+    /* To have some space from the left */
+    margin-left: 1rem;
+}
+
+/* Registration */
+.registration {
+    height: 90vh; /* header already takes 10vh, so 100vh - 10vh is 90vh */
+    /* To center the div with a class of container inside this section */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Default to center the background image */
+    background-image: url("bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+    width: 460px; /* this is a permanent width, it'll always be applyed unless we change it */
+    padding: 2rem; /* to have 32px space inside of the container from all sides */
+    background-color: var(--bg-color);
+}
+
+.registration h1 {
+    text-align: center; /* To center the text inside */
+    font-size: 2rem; /* 32px */
+    font-weight: 400; /* default */
+    color: #fff;
+}
+
+.registration p {
+    text-align: center; /* To center the text inside */
+    font-size: 1rem; /* 16px */
+    font-weight: 400; /* default */
+    color: #999;
+    margin-bottom: 1.6rem; /* a little bit of space from the bottom */
+}
+
+.registration label {
+    margin-bottom: 0.4rem; /* a little bit of space from the bottom for both labels*/
+    text-transform: uppercase; /* Each letter should be uppercase, we can also set it manually in html */
+    color: #888;
+}
+
+.registration input[type="text"] { /* Without [type="text"] background dosn't work when we type something in */
+    width: 100%; /* To widen it from the start of the container to the end excluding padding */
+    padding: 0.6rem; /* To make inputs larger */
+    margin-bottom: 1rem; /* a little bit of space from the bottom */
+    border: none; /* Removes borders */
+    border-radius: 4px; /* Makes the edges smooth */
+    color: #fff; /* Color of the text we type */
+    background-color: #424549; /* Color of the input itself */
+}
+
+.registration input:focus { /* When we're typing something in */
+    outline-style: solid; /* This will appear, it's like border */
+    outline-color: #738ADB; 
+}
+
+.registration .btn-login {
+    cursor: pointer; /* To make cursor pointing */
+    height: 2.6rem; /* Changing the height */
+    width: 100%; /* To widen it from the start of the container to the end excluding padding */
+    font-weight: bold; /* makes text bolder */
+    color: #fff;
+    border: none; /* Removes borders */
+    border-radius: 4px; /* Makes the edges smooth */
+    background-color: #738ADB;
+}
+
+.registration .btn-login:hover {
+    opacity: 0.9; /* Just nice hover effect */
+}
+
+.registration .link {
+    margin-top: 0.4rem; /* space frome the top */
+    text-decoration: none; /* Say no to underline */
+    font-size: 0.925rem; /* I dicided to make text a little smaller */
+    color: #738ADB;
+}
+
+.registration .link:hover {
+    text-decoration: underline; /* Adds underline only if we hover over it */
+}
+
+/* Something new, basically it says if the width of our window is less or equal to 800px then the styles there will be applyed */
+@media (max-width: 800px) {
+    .container {
+        width: 360px; /* in our case we want the container to be smaller (by default it's 460px as we set in the start)*/
+    }
+}
